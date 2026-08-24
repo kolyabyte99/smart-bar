@@ -1,0 +1,157 @@
+[
+  {
+    "id": "coffee-espresso-blend",
+    "name": "Кава Espresso Blend",
+    "category": "coffee",
+    "price": 320,
+    "image": "/images/coffee-1.svg",
+    "description": "Класична суміш арабіки та робусти для міцного еспресо. Насичений смак з нотами горіха та шоколаду.",
+    "taste_notes": ["Шоколад", "Горіх", "Карамель"],
+    "origin": "Бразилія + Індія",
+    "in_stock": true,
+    "bestseller": true,
+    "options": {
+      "weight": ["250г", "500г", "1000г"]
+    },
+    "weight_prices": {
+      "250г": 320,
+      "500г": 590,
+      "1000г": 1090
+    }
+  },
+  {
+    "id": "coffee-arabica-brazil",
+    "name": "Арабіка Бразилія",
+    "category": "coffee",
+    "price": 280,
+    "image": "/images/coffee-2.svg",
+    "description": "Арабіка з Бразилії. М'який збалансований смак з легкою кислинкою.",
+    "taste_notes": ["Шоколад", "Мигдаль", "Карамель"],
+    "origin": "Бразилія",
+    "in_stock": true,
+    "bestseller": false,
+    "options": {
+      "weight": ["250г", "500г", "1000г"]
+    },
+    "weight_prices": {
+      "250г": 280,
+      "500г": 520,
+      "1000г": 970
+    }
+  },
+  {
+    "id": "coffee-arabica-ethiopia",
+    "name": "Арабіка Ефіопія Сідамо",
+    "category": "coffee",
+    "price": 380,
+    "image": "/images/coffee-3.svg",
+    "description": "Яскрава ефіопська арабіка з фруктовим букетом. Квіткові ноти та цитрусова кислинка.",
+    "taste_notes": ["Бергамот", "Лимон", "Жасмин"],
+    "origin": "Ефіопія",
+    "in_stock": true,
+    "bestseller": true,
+    "options": {
+      "weight": ["250г", "500г", "1000г"]
+    },
+    "weight_prices": {
+      "250г": 380,
+      "500г": 710,
+      "1000г": 1320
+    }
+  },
+  {
+    "id": "coffee-decaf",
+    "name": "Кава без кофеїну",
+    "category": "coffee",
+    "price": 360,
+    "image": "/images/coffee-4.svg",
+    "description": "Арабіка без кофеїну зі збереженим смаковим профілем. М'який та ароматний.",
+    "taste_notes": ["Карамель", "Фундук", "Ваніль"],
+    "origin": "Колумбія",
+    "in_stock": false,
+    "bestseller": false,
+    "options": {
+      "weight": ["250г", "500г"]
+    },
+    "weight_prices": {
+      "250г": 360,
+      "500г": 680
+    }
+  },
+  {
+    "id": "tea-assam",
+    "name": "Чорний чай Асам",
+    "category": "tea",
+    "price": 180,
+    "image": "/images/tea-1.svg",
+    "description": "Міцний індійський чорний чай з насиченим смаком та квітковим ароматом.",
+    "taste_notes": ["Мед", "Мальт", "Дерево"],
+    "origin": "Індія",
+    "in_stock": true,
+    "bestseller": false,
+    "options": {
+      "weight": ["100г", "250г"]
+    },
+    "weight_prices": {
+      "100г": 180,
+      "250г": 410
+    }
+  },
+  {
+    "id": "tea-matcha",
+    "name": "Матча зелена",
+    "category": "tea",
+    "price": 280,
+    "image": "/images/tea-2.svg",
+    "description": "Японська церемоніальна матча. Яскравий зелений колір та м'який умамі-смак.",
+    "taste_notes": ["Умамі", "Трава", "Морські водорості"],
+    "origin": "Японія",
+    "in_stock": true,
+    "bestseller": true,
+    "options": {
+      "weight": ["25г", "50г"]
+    },
+    "weight_prices": {
+      "25г": 280,
+      "50г": 530
+    }
+  },
+  {
+    "id": "tea-puer",
+    "name": "Пуер Шу",
+    "category": "tea",
+    "price": 240,
+    "image": "/images/tea-3.svg",
+    "description": "Витриманий китайський пуер з глибоким землистим смаком. Ідеальний для медитації.",
+    "taste_notes": ["Земля", "Чорнослив", "Дерево"],
+    "origin": "Китай (Юньнань)",
+    "in_stock": true,
+    "bestseller": false,
+    "options": {
+      "weight": ["100г", "250г"]
+    },
+    "weight_prices": {
+      "100г": 240,
+      "250г": 550
+    }
+  },
+  {
+    "id": "tea-green-sencha",
+    "name": "Зелений чай Сенча",
+    "category": "tea",
+    "price": 195,
+    "image": "/images/tea-4.svg",
+    "description": "Класичний японський зелений чай. Свіжий трав'яний смак з легкою солодкістю.",
+    "taste_notes": ["Трава", "Морські водорості", "Цукерка"],
+    "origin": "Японія",
+    "in_stock": true,
+    "bestseller": false,
+    "options": {
+      "weight": ["100г", "250г"]
+    },
+    "weight_prices": {
+      "100г": 195,
+      "250г": 450
+    }
+  }
+]
