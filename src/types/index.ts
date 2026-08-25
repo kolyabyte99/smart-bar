@@ -41,9 +41,12 @@ export interface OrderForm {
   payment: "cod"; // тільки накладений платіж
 }
 
+export type OrderStatus = "new" | "shipped" | "delivered" | "cancelled";
+
 export interface Order extends OrderForm {
+  id: string;             // короткий ID: SB-20260824-A1B2C3
   items: CartItem[];
   total: number;
   created_at: string;
-  status: "new" | "processing" | "shipped" | "delivered" | "cancelled";
+  status: OrderStatus;
 }

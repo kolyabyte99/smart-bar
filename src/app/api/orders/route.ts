@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import type { Order } from "@/types";
-import { sendTelegramNotification, sendToGoogleSheets } from "@/lib/notifications";
+import {
+  generateOrderId,
+  sendTelegramNotification,
+  sendToGoogleSheets,
+} from "@/lib/notifications";
 
 export async function POST(request: Request) {
   try {
@@ -18,6 +22,7 @@ export async function POST(request: Request) {
     }
 
     const order: Order = {
+      id: generateOrderId(),
       name: String(body.name).slice(0, 200),
       phone: String(body.phone).slice(0, 50),
       email: body.email ? String(body.email).slice(0, 200) : undefined,
@@ -39,7 +44,8 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      order_id: order.created_at,
+      order_id: order.id,
+      created_at: order.created_at,
       telegram_sent: tgOk,
       gsheets_sent: gsOk,
     });
