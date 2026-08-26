@@ -29,16 +29,21 @@ export interface CartItem {
   weight: string;
   price: number;
   quantity: number;
+  category: string;       // для кроку карусельки: "coffee" | "tea"
 }
+
+export type DeliveryMethod = "nova-poshta" | "pickup";
 
 export interface OrderForm {
   name: string;
   phone: string;
   email?: string;
-  city: string;
-  np_branch: string;
+  city?: string;          // для nova-poshta
+  np_branch?: string;     // для nova-poshta
+  pickup_location?: string; // для pickup (Градизьк)
   comment?: string;
-  payment: "cod"; // тільки накладений платіж
+  payment: "cod";
+  delivery: DeliveryMethod;
 }
 
 export type OrderStatus = "new" | "shipped" | "delivered" | "cancelled";

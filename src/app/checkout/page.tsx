@@ -12,6 +12,7 @@ export default function CheckoutPage() {
 
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [delivery, setDelivery] = useState<"nova-poshta" | "pickup">("nova-poshta");
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -29,7 +30,7 @@ export default function CheckoutPage() {
         </h1>
         <button
           onClick={() => router.push("/#catalog")}
-          className="bg-[#FACC15] hover:bg-[#EAB308] text-black font-medium px-7 py-3 rounded-lg transition"
+          className="bg-[#FACC15] hover:bg-[#EAB308] text-black font-semibold px-7 py-3 rounded-lg transition"
         >
           До магазину
         </button>
@@ -43,10 +44,16 @@ export default function CheckoutPage() {
     setError(null);
 
     try {
+      const payload = {
+        ...form,
+        delivery,
+        items,
+        total,
+      };
       const res = await fetch("/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, items, total }),
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -67,25 +74,82 @@ export default function CheckoutPage() {
 
   return (
     <div className="container mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-8 text-[#0A0A0A]">Оформлення замовлення</h1>
+      <h1 className="text-4xl md:text-5xl font-iceland font-bold mb-8 text-[#0A0A0A] tracking-wide">
+        Оформлення замовлення
+      </h1>
 
       <form onSubmit={handleSubmit} className="grid lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-4">
           <h2 className="font-bold text-xl mb-4 text-[#0A0A0A]">Дані для доставки</h2>
 
-          <div>
-            <label className="text-sm text-[#737373] mb-1 block font-medium">
-              ПІБ <span className="text-[#FACC15]">*</span>
-            </label>
-            <input
-              required
-              className={inputClass}
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-            />
+          {/* DELIVERY METHOD */}
+          <div className="bg-white border border-[#E5E5E5] rounded-xl p-4">
+            <div className="font-semibold mb-3 text-[#0A0A0A]">Спосіб доставки</div>
+            <div className="grid sm:grid-cols-2 gap-3">
+              <label
+                className={`cursor-pointer rounded-xl border-2 p-4 transition ${
+                  delivery === "nova-poshta"
+                    ? "border-[#FACC15] bg-[#FACC15]/10"
+                    : "border-[#E5E5E5] bg-white hover:border-[#737373]"
+                }`}
+              >
+                <div className="flex items-start gap-3">
+                  <input
+                    type="radio"
+                    name="delivery"
+                    value="nova-poshta"
+                    checked={delivery === "nova-poshta"}
+                    onChange={() => setDelivery("nova-poshta")}
+                    className="mt-1 accent-[#FACC15]"
+                  />
+                  <div>
+                    <div className="font-semibold text-[#0A0A0A]">📦 Нова пошта</div>
+                    <div className="text-xs text-[#737373] mt-1">
+                      Доставка у відділення по всій Україні. 1–3 робочих дні.
+                    </div>
+                  </div>
+                </div>
+              </label>
+              <label
+                className={`cursor-pointer rounded-xl border-2 p-4 transition ${
+                  delivery === "pickup"
+                    ? "border-[#0A0A0A] bg-[#FAFAFA]"
+                    : "border-[#E5E5E5] bg-white hover:border-[#737373]"
+                }`}
+              >
+                <div className="flex items-start gap-3">
+                  <input
+                    type="radio"
+                    name="delivery"
+                    value="pickup"
+                    checked={delivery === "pickup"}
+                    onChange={() => setDelivery("pickup")}
+                    className="mt-1 accent-[#FACC15]"
+                  />
+                  <div>
+                    <div className="font-semibold text-[#0A0A0A]">🏪 Самовивіз</div>
+                    <div className="text-xs text-[#737373] mt-1">
+                      Градизьк, вул. Молодіжна 5. Безкоштовно, готівкою при отриманні.
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
           </div>
 
+          {/* CUSTOMER INFO */}
           <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <label className="text-sm text-[#737373] mb-1 block font-medium">
+                ПІБ <span className="text-[#FACC15]">*</span>
+              </label>
+              <input
+                required
+                className={inputClass}
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+              />
+            </div>
             <div>
               <label className="text-sm text-[#737373] mb-1 block font-medium">
                 Телефон <span className="text-[#FACC15]">*</span>
@@ -99,42 +163,60 @@ export default function CheckoutPage() {
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
               />
             </div>
-            <div>
-              <label className="text-sm text-[#737373] mb-1 block font-medium">Email</label>
-              <input
-                type="email"
-                className={inputClass}
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-              />
-            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <label className="text-sm text-[#737373] mb-1 block font-medium">
-                Місто <span className="text-[#FACC15]">*</span>
-              </label>
-              <input
-                required
-                className={inputClass}
-                value={form.city}
-                onChange={(e) => setForm({ ...form, city: e.target.value })}
-              />
-            </div>
-            <div>
-              <label className="text-sm text-[#737373] mb-1 block font-medium">
-                Відділення НП <span className="text-[#FACC15]">*</span>
-              </label>
-              <input
-                required
-                placeholder="Наприклад: №25"
-                className={inputClass}
-                value={form.np_branch}
-                onChange={(e) => setForm({ ...form, np_branch: e.target.value })}
-              />
-            </div>
+          <div>
+            <label className="text-sm text-[#737373] mb-1 block font-medium">Email</label>
+            <input
+              type="email"
+              className={inputClass}
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+            />
           </div>
+
+          {/* NP BRANCH — тільки якщо nova-poshta */}
+          {delivery === "nova-poshta" && (
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <label className="text-sm text-[#737373] mb-1 block font-medium">
+                  Місто <span className="text-[#FACC15]">*</span>
+                </label>
+                <input
+                  required
+                  className={inputClass}
+                  value={form.city}
+                  onChange={(e) => setForm({ ...form, city: e.target.value })}
+                />
+              </div>
+              <div>
+                <label className="text-sm text-[#737373] mb-1 block font-medium">
+                  Відділення НП <span className="text-[#FACC15]">*</span>
+                </label>
+                <input
+                  required
+                  placeholder="Наприклад: №25"
+                  className={inputClass}
+                  value={form.np_branch}
+                  onChange={(e) => setForm({ ...form, np_branch: e.target.value })}
+                />
+              </div>
+            </div>
+          )}
+
+          {delivery === "pickup" && (
+            <div className="bg-white border border-[#E5E5E5] rounded-xl p-4">
+              <div className="text-sm text-[#0A0A0A]">
+                📍 Заберіть замовлення за адресою:
+                <br />
+                <strong className="block mt-1 text-base">Градизьк, вул. Молодіжна 5</strong>
+                <br />
+                Графік роботи: Пн–Пт 09:00–19:00, Сб–Нд 10:00–16:00.
+                <br />
+                Оплата готівкою при отриманні.
+              </div>
+            </div>
+          )}
 
           <div>
             <label className="text-sm text-[#737373] mb-1 block font-medium">Коментар</label>
@@ -153,7 +235,9 @@ export default function CheckoutPage() {
               <div>
                 <div className="font-medium text-[#0A0A0A]">Накладений платіж</div>
                 <div className="text-xs text-[#737373]">
-                  Оплата при отриманні у відділенні Нової пошти
+                  {delivery === "pickup"
+                    ? "Оплата готівкою при отриманні в кав'ярні"
+                    : "Оплата при отриманні у відділенні Нової пошти"}
                 </div>
               </div>
             </label>
@@ -185,12 +269,16 @@ export default function CheckoutPage() {
               <span>Усього:</span>
               <span>{total} грн</span>
             </div>
-            <p className="text-xs text-[#737373] mt-1">+ доставка Новою поштою</p>
+            <p className="text-xs text-[#737373] mt-1">
+              {delivery === "pickup"
+                ? "Самовивіз — безкоштовно"
+                : "+ доставка Новою поштою"}
+            </p>
           </div>
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-[#FACC15] hover:bg-[#EAB308] disabled:opacity-50 text-black font-medium py-3 rounded-lg transition active:scale-[0.98]"
+            className="w-full bg-[#FACC15] hover:bg-[#EAB308] disabled:opacity-50 text-black font-semibold py-3 rounded-lg transition active:scale-[0.98]"
           >
             {submitting ? "Оформлення..." : "Підтвердити замовлення"}
           </button>

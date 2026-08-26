@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import type { Order } from "@/types";
+import type { Order, OrderForm } from "@/types";
 import {
   generateOrderId,
   sendTelegramNotification,
@@ -11,9 +11,9 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     // базова валідація
-    if (!body.name || !body.phone || !body.city || !body.np_branch) {
+    if (!body.name || !body.phone) {
       return NextResponse.json(
-        { error: "Заповніть обов'язкові поля" },
+        { error: "Заповніть ПІБ і телефон" },
         { status: 400 },
       );
     }
@@ -21,15 +21,30 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Кошик порожній" }, { status: 400 });
     }
 
+    const delivery: OrderForm["delivery"] = body.delivery === "pickup" ? "pickup" : "nova-poshta";
+    const pickup_location = delivery === "pickup" ? "Градизьк, вул. Молодіжна 5" : undefined;
+
+    if (delivery === "nova-poshta" && (!body.city || !body.np_branch)) {
+      return NextResponse.json(
+        { error: "Вкажіть місто і відділення Нової пошти" },
+        { status: 400 },
+      );
+    }
+    if (delivery === "pickup" && !pickup_location) {
+      return NextResponse.json({ error: "Помилка самовивозу" }, { status: 400 });
+    }
+
     const order: Order = {
       id: generateOrderId(),
       name: String(body.name).slice(0, 200),
       phone: String(body.phone).slice(0, 50),
       email: body.email ? String(body.email).slice(0, 200) : undefined,
-      city: String(body.city).slice(0, 200),
-      np_branch: String(body.np_branch).slice(0, 200),
+      city: body.city ? String(body.city).slice(0, 200) : undefined,
+      np_branch: body.np_branch ? String(body.np_branch).slice(0, 200) : undefined,
+      pickup_location,
       comment: body.comment ? String(body.comment).slice(0, 1000) : undefined,
       payment: "cod",
+      delivery,
       items: body.items,
       total: Number(body.total) || 0,
       created_at: new Date().toISOString(),
@@ -46,6 +61,8 @@ export async function POST(request: Request) {
       success: true,
       order_id: order.id,
       created_at: order.created_at,
+      delivery: order.delivery,
+      pickup_location: order.pickup_location,
       telegram_sent: tgOk,
       gsheets_sent: gsOk,
     });

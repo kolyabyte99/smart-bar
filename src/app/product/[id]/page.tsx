@@ -30,11 +30,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         </div>
 
         <div className="flex flex-col">
-          {product.bestseller && (
-            <span className="inline-block w-fit bg-[#FACC15] text-black text-xs font-semibold px-2.5 py-1 rounded uppercase tracking-wider mb-3">
-              Топ продажів
-            </span>
-          )}
           <h1 className="text-3xl md:text-4xl font-bold mb-3 text-[#0A0A0A]">{product.name}</h1>
           <p className="text-[#737373] mb-6 leading-relaxed">{product.description}</p>
 

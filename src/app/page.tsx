@@ -77,7 +77,7 @@ export default function HomePage() {
       >
         <div className="absolute inset-0 bg-black/65" />
         <div className="relative container mx-auto px-4 py-16 md:py-24 text-center max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-5 leading-tight text-white">
+          <h1 className="text-5xl md:text-7xl font-iceland font-bold mb-5 leading-tight text-white tracking-wide">
             Кава та <span className="text-[#FACC15]">чай</span>
             <br />
             з доставкою по Україні
@@ -97,7 +97,7 @@ export default function HomePage() {
       {/* ABOUT — білий фон */}
       <section className="bg-white border-y border-[#E5E5E5]">
         <div className="container mx-auto px-4 py-14 max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#0A0A0A] text-center">
+          <h2 className="text-4xl md:text-5xl font-iceland font-bold mb-6 text-[#0A0A0A] text-center tracking-wide">
             Про Smart Bar
           </h2>
           <div className="space-y-4 text-[#0A0A0A] leading-relaxed text-center md:text-left">
@@ -127,7 +127,7 @@ export default function HomePage() {
       >
         <div className="container mx-auto px-4 py-14">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-[#0A0A0A]">
+            <h2 className="text-4xl md:text-5xl font-iceland font-bold mb-2 text-[#0A0A0A] tracking-wide">
               Наш асортимент
             </h2>
             <p className="text-[#737373]">Кава, чай та пуер — на будь-який смак</p>
@@ -238,19 +238,27 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#0A0A0A] text-center">
             Доставка та оплата
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-[#FAFAFA] border border-[#E5E5E5] rounded-xl p-5">
-              <h3 className="font-semibold mb-2 text-[#0A0A0A]">Доставка</h3>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-white border border-[#E5E5E5] rounded-xl p-5">
+              <h3 className="font-semibold mb-2 text-[#0A0A0A]">📦 Нова пошта</h3>
               <ul className="text-sm text-[#0A0A0A] space-y-1">
-                <li>• Новою поштою по всій Україні</li>
+                <li>• По всій Україні</li>
                 <li>• У відділення або поштомат</li>
                 <li>• 1–3 робочих дні</li>
               </ul>
             </div>
-            <div className="bg-[#FAFAFA] border border-[#E5E5E5] rounded-xl p-5">
-              <h3 className="font-semibold mb-2 text-[#0A0A0A]">Оплата</h3>
+            <div className="bg-white border border-[#E5E5E5] rounded-xl p-5">
+              <h3 className="font-semibold mb-2 text-[#0A0A0A]">🏪 Самовивіз</h3>
               <ul className="text-sm text-[#0A0A0A] space-y-1">
-                <li>• Накладений платіж при отриманні</li>
+                <li>• Градизьк, вул. Молодіжна 5</li>
+                <li>• Безкоштовно</li>
+                <li>• Готівкою при отриманні</li>
+              </ul>
+            </div>
+            <div className="bg-white border border-[#E5E5E5] rounded-xl p-5">
+              <h3 className="font-semibold mb-2 text-[#0A0A0A]">💳 Оплата</h3>
+              <ul className="text-sm text-[#0A0A0A] space-y-1">
+                <li>• Накладений платіж</li>
                 <li>• Без передоплати</li>
                 <li>• Перевірка посилки на місці</li>
               </ul>

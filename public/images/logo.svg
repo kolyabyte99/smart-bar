@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <linearGradient id="sbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FACC15"/>
+      <stop offset="100%" stop-color="#EAB308"/>
+    </linearGradient>
+  </defs>
+  <circle cx="30" cy="30" r="26" fill="#0A0A0A"/>
+  <circle cx="30" cy="30" r="22" fill="none" stroke="url(#sbGrad)" stroke-width="2"/>
+  <text x="30" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#FFFFFF">SB</text>
+  <text x="66" y="40" font-family="'Iceland', Inter, sans-serif" font-size="28" fill="#0A0A0A" letter-spacing="1">smart bar</text>
+</svg>

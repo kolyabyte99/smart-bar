@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
-  <rect width="400" height="400" fill="#EFE5D6"/>
-  <rect x="140" y="130" width="120" height="170" rx="8" fill="#7DA060" stroke="#6B4423" stroke-width="3"/>
-  <path d="M 155 180 L 245 180 M 160 210 L 240 210 M 155 240 L 245 240" stroke="#FAF7F2" stroke-width="2"/>
-  <text x="200" y="340" text-anchor="middle" fill="#8B7355" font-family="sans-serif" font-size="18">Sencha</text>
-</svg>

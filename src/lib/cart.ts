@@ -42,6 +42,7 @@ export const useCart = create<CartState>()(
                 weight,
                 price,
                 quantity: 1,
+                category: product.category,
               },
             ],
           });

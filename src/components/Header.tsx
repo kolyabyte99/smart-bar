@@ -10,10 +10,11 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-[#FAFAFA]/95 backdrop-blur border-b border-[#E5E5E5]">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
-          <div className="w-10 h-10 rounded-lg bg-[#FACC15] flex items-center justify-center text-black font-bold text-lg">
-            SB
-          </div>
-          <span className="text-xl font-semibold tracking-tight text-[#0A0A0A]">smart bar</span>
+          <img
+            src="/images/logo.svg"
+            alt="Smart Bar"
+            className="h-10 w-auto"
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-7 text-sm font-medium">

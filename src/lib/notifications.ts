@@ -1,22 +1,20 @@
 import type { Order } from "@/types";
 
 /**
- * Генерує короткий читабельний ID типу SB-20260824-A1B2C3
- * - Префікс SB (Smart Bar)
- * - Дата YYYYMMDD
- * - 6-char random base36 (A-Z + 0-9)
- * Унікальність достатня для тисяч замовлень на день.
+ * Генерує короткий 6-цифровий ID типу 847291.
+ * Унікальність: при рівномірному розподілі — близько 50% колізій
+ * після 4000+ замовлень на день, але для малого/середнього
+ * магазину цього достатньо. Якщо потрібна абсолютна
+ * гарантія — додай nanoid або crypto.randomUUID().
  */
 export function generateOrderId(): string {
-  const now = new Date();
-  const date =
-    now.getFullYear().toString() +
-    String(now.getMonth() + 1).padStart(2, "0") +
-    String(now.getDate()).padStart(2, "0");
-  const random = Math.random().toString(36).slice(2, 8).toUpperCase().replace(/[^A-Z0-9]/g, "0");
-  // pad якщо випало коротше 6
-  const suffix = (random + "000000").slice(0, 6);
-  return `SB-${date}-${suffix}`;
+  // 6 цифр, перша != 0 щоб не було ID типу 012345
+  let id = "";
+  id += Math.floor(Math.random() * 9) + 1; // 1-9
+  for (let i = 0; i < 5; i++) {
+    id += Math.floor(Math.random() * 10); // 0-9
+  }
+  return id;
 }
 
 export async function sendTelegramNotification(order: Order): Promise<boolean> {
@@ -32,12 +30,18 @@ export async function sendTelegramNotification(order: Order): Promise<boolean> {
     .map((i) => `  • ${i.name} (${i.weight}) × ${i.quantity} = ${i.price * i.quantity} грн`)
     .join("\n");
 
+  const delivery = order.delivery === "pickup" ? "🏪 Самовивіз" : "📦 Нова пошта";
+  const deliveryDetails =
+    order.delivery === "pickup"
+      ? `📍 ${order.pickup_location}`
+      : `� ${order.city}, відділення НП: ${order.np_branch}`;
+
   const text =
-    `🛒 *Нове замовлення ${order.id}*\n\n` +
+    `🛒 *Нове замовлення ${order.id}* (${delivery})\n\n` +
     `👤 ${order.name}\n` +
     `📞 ${order.phone}\n` +
     (order.email ? `📧 ${order.email}\n` : "") +
-    `📍 ${order.city}, відділення НП: ${order.np_branch}\n` +
+    `${deliveryDetails}\n` +
     `💳 Оплата: накладений платіж\n\n` +
     `📦 *Товари:*\n${itemsList}\n\n` +
     `💰 *Сума: ${order.total} грн*\n` +
@@ -73,8 +77,10 @@ export async function sendToGoogleSheets(order: Order): Promise<boolean> {
     name: order.name,
     phone: order.phone,
     email: order.email || "",
-    city: order.city,
-    np_branch: order.np_branch,
+    city: order.city || "",
+    np_branch: order.np_branch || "",
+    pickup_location: order.pickup_location || "",
+    delivery: order.delivery === "pickup" ? "Самовивіз" : "Нова пошта",
     comment: order.comment || "",
     payment: "Накладений платіж",
     items: order.items

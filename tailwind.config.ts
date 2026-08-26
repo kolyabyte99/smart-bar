@@ -18,7 +18,8 @@ const config: Config = {
         border: "#E5E5E5",      // сірий border
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Iceland", "Inter", "system-ui", "sans-serif"],
+        iceland: ["Iceland", "Inter", "sans-serif"],
       },
     },
   },

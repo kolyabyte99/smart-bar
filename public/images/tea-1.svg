@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
-  <rect width="400" height="400" fill="#EFE5D6"/>
-  <path d="M 130 140 L 270 140 L 260 280 L 140 280 Z" fill="#D4B894" stroke="#6B4423" stroke-width="3"/>
-  <path d="M 165 200 L 235 200 M 170 230 L 230 230" stroke="#FAF7F2" stroke-width="2"/>
-  <text x="200" y="170" text-anchor="middle" fill="#6B4423" font-family="sans-serif" font-size="16" font-weight="bold">ASSAM</text>
-  <text x="200" y="350" text-anchor="middle" fill="#8B7355" font-family="sans-serif" font-size="18">Black Tea</text>
-</svg>

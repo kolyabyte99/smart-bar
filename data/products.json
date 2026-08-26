@@ -1,157 +1,209 @@
 [
   {
-    "id": "coffee-espresso-blend",
-    "name": "Кава Espresso Blend",
+    "id": "coffee-montana-espresso",
+    "name": "Montana Espresso Style",
     "category": "coffee",
-    "price": 320,
-    "image": "/images/coffee-1.svg",
-    "description": "Класична суміш арабіки та робусти для міцного еспресо. Насичений смак з нотами горіха та шоколаду.",
-    "taste_notes": ["Шоколад", "Горіх", "Карамель"],
-    "origin": "Бразилія + Індія",
-    "in_stock": true,
-    "bestseller": true,
-    "options": {
-      "weight": ["250г", "500г", "1000г"]
-    },
-    "weight_prices": {
-      "250г": 320,
-      "500г": 590,
-      "1000г": 1090
-    }
-  },
-  {
-    "id": "coffee-arabica-brazil",
-    "name": "Арабіка Бразилія",
-    "category": "coffee",
-    "price": 280,
-    "image": "/images/coffee-2.svg",
-    "description": "Арабіка з Бразилії. М'який збалансований смак з легкою кислинкою.",
-    "taste_notes": ["Шоколад", "Мигдаль", "Карамель"],
+    "price": 480,
+    "image": "/images/coffee-montana-espresso.jpg",
+    "description": "Свіжеобсмажена суміш для еспресо. Різдвяний бленд з нотами горіхів і карамелі.",
+    "taste_notes": ["Горіх", "Карамель", "Шоколад"],
     "origin": "Бразилія",
     "in_stock": true,
     "bestseller": false,
     "options": {
-      "weight": ["250г", "500г", "1000г"]
+      "weight": ["100г", "200г", "300г", "400г", "500г", "1000г"]
     },
     "weight_prices": {
-      "250г": 280,
-      "500г": 520,
-      "1000г": 970
+      "100г": 480,
+      "200г": 900,
+      "300г": 1280,
+      "400г": 1640,
+      "500г": 1980,
+      "1000г": 3690
     }
   },
   {
-    "id": "coffee-arabica-ethiopia",
-    "name": "Арабіка Ефіопія Сідамо",
+    "id": "coffee-montana-classic",
+    "name": "Montana Classic Blend",
     "category": "coffee",
-    "price": 380,
-    "image": "/images/coffee-3.svg",
-    "description": "Яскрава ефіопська арабіка з фруктовим букетом. Квіткові ноти та цитрусова кислинка.",
-    "taste_notes": ["Бергамот", "Лимон", "Жасмин"],
-    "origin": "Ефіопія",
+    "price": 420,
+    "image": "/images/coffee-montana-classic.jpg",
+    "description": "Класична суміш Montana — збалансований смак на кожен день. М'яка кислинка і горіховий післясмак.",
+    "taste_notes": ["Мигдаль", "Какао", "Ваніль"],
+    "origin": "Бразилія",
     "in_stock": true,
-    "bestseller": true,
+    "bestseller": false,
     "options": {
-      "weight": ["250г", "500г", "1000г"]
+      "weight": ["100г", "200г", "300г", "400г", "500г", "1000г"]
     },
     "weight_prices": {
-      "250г": 380,
-      "500г": 710,
-      "1000г": 1320
+      "100г": 420,
+      "200г": 790,
+      "300г": 1130,
+      "400г": 1450,
+      "500г": 1750,
+      "1000г": 3290
     }
   },
   {
-    "id": "coffee-decaf",
-    "name": "Кава без кофеїну",
+    "id": "coffee-montana-strong",
+    "name": "Montana Strong Roast",
     "category": "coffee",
-    "price": 360,
-    "image": "/images/coffee-4.svg",
-    "description": "Арабіка без кофеїну зі збереженим смаковим профілем. М'який та ароматний.",
-    "taste_notes": ["Карамель", "Фундук", "Ваніль"],
-    "origin": "Колумбія",
-    "in_stock": false,
-    "bestseller": false,
-    "options": {
-      "weight": ["250г", "500г"]
-    },
-    "weight_prices": {
-      "250г": 360,
-      "500г": 680
-    }
-  },
-  {
-    "id": "tea-assam",
-    "name": "Чорний чай Асам",
-    "category": "tea",
-    "price": 180,
-    "image": "/images/tea-1.svg",
-    "description": "Міцний індійський чорний чай з насиченим смаком та квітковим ароматом.",
-    "taste_notes": ["Мед", "Мальт", "Дерево"],
-    "origin": "Індія",
+    "price": 460,
+    "image": "/images/coffee-montana-strong.jpg",
+    "description": "Міцне обсмаження для поціновувачів насиченого смаку. Гіркота шоколаду і димні ноти.",
+    "taste_notes": ["Темний шоколад", "Дим", "Кавова гіркота"],
+    "origin": "Бразилія",
     "in_stock": true,
     "bestseller": false,
     "options": {
-      "weight": ["100г", "250г"]
+      "weight": ["100г", "200г", "300г", "400г", "500г", "1000г"]
     },
     "weight_prices": {
-      "100г": 180,
-      "250г": 410
+      "100г": 460,
+      "200г": 870,
+      "300г": 1240,
+      "400г": 1590,
+      "500г": 1920,
+      "1000г": 3590
     }
   },
   {
-    "id": "tea-matcha",
-    "name": "Матча зелена",
-    "category": "tea",
-    "price": 280,
-    "image": "/images/tea-2.svg",
-    "description": "Японська церемоніальна матча. Яскравий зелений колір та м'який умамі-смак.",
-    "taste_notes": ["Умамі", "Трава", "Морські водорості"],
-    "origin": "Японія",
-    "in_stock": true,
-    "bestseller": true,
-    "options": {
-      "weight": ["25г", "50г"]
-    },
-    "weight_prices": {
-      "25г": 280,
-      "50г": 530
-    }
-  },
-  {
-    "id": "tea-puer",
-    "name": "Пуер Шу",
-    "category": "tea",
-    "price": 240,
-    "image": "/images/tea-3.svg",
-    "description": "Витриманий китайський пуер з глибоким землистим смаком. Ідеальний для медитації.",
-    "taste_notes": ["Земля", "Чорнослив", "Дерево"],
-    "origin": "Китай (Юньнань)",
-    "in_stock": true,
-    "bestseller": false,
-    "options": {
-      "weight": ["100г", "250г"]
-    },
-    "weight_prices": {
-      "100г": 240,
-      "250г": 550
-    }
-  },
-  {
-    "id": "tea-green-sencha",
+    "id": "tea-green",
     "name": "Зелений чай Сенча",
     "category": "tea",
-    "price": 195,
-    "image": "/images/tea-4.svg",
-    "description": "Класичний японський зелений чай. Свіжий трав'яний смак з легкою солодкістю.",
+    "price": 280,
+    "image": "/images/tea-green.jpg",
+    "description": "Класичний японський зелений чай сенча. Свіжий трав'янистий смак з легкою солодкістю.",
     "taste_notes": ["Трава", "Морські водорості", "Цукерка"],
     "origin": "Японія",
     "in_stock": true,
     "bestseller": false,
     "options": {
-      "weight": ["100г", "250г"]
+      "weight": ["50г", "100г", "150г", "200г", "250г", "500г"]
     },
     "weight_prices": {
-      "100г": 195,
-      "250г": 450
+      "50г": 280,
+      "100г": 530,
+      "150г": 760,
+      "200г": 980,
+      "250г": 1180,
+      "500г": 2280
+    }
+  },
+  {
+    "id": "tea-black",
+    "name": "Чорний чай Асам",
+    "category": "tea",
+    "price": 220,
+    "image": "/images/tea-black.jpg",
+    "description": "Міцний індійський чорний чай з насиченим смаком і медовим ароматом.",
+    "taste_notes": ["Мед", "Мальт", "Дерево"],
+    "origin": "Індія",
+    "in_stock": true,
+    "bestseller": false,
+    "options": {
+      "weight": ["50г", "100г", "150г", "200г", "250г", "500г"]
+    },
+    "weight_prices": {
+      "50г": 220,
+      "100г": 410,
+      "150г": 590,
+      "200г": 760,
+      "250г": 920,
+      "500г": 1780
+    }
+  },
+  {
+    "id": "tea-oolong",
+    "name": "Улун Молочний",
+    "category": "tea",
+    "price": 320,
+    "image": "/images/tea-oolong.jpg",
+    "description": "Напівферментований чай улун з молочним післясмаком і квітковим ароматом.",
+    "taste_notes": ["Молоко", "Карамель", "Квіти"],
+    "origin": "Тайвань",
+    "in_stock": true,
+    "bestseller": false,
+    "options": {
+      "weight": ["50г", "100г", "150г", "200г", "250г", "500г"]
+    },
+    "weight_prices": {
+      "50г": 320,
+      "100г": 600,
+      "150г": 860,
+      "200г": 1100,
+      "250г": 1320,
+      "500г": 2580
+    }
+  },
+  {
+    "id": "tea-puer-shu",
+    "name": "Пуер Шу (пресований)",
+    "category": "tea",
+    "price": 380,
+    "image": "/images/tea-puer-shu.jpg",
+    "description": "Витриманий пресований пуер з глибоким землистим смаком. Ідеальний для медитативного чаювання.",
+    "taste_notes": ["Земля", "Чорнослив", "Дерево"],
+    "origin": "Китай (Юньнань)",
+    "in_stock": true,
+    "bestseller": false,
+    "options": {
+      "weight": ["50г", "100г", "150г", "200г", "250г", "500г"]
+    },
+    "weight_prices": {
+      "50г": 380,
+      "100г": 720,
+      "150г": 1040,
+      "200г": 1340,
+      "250г": 1620,
+      "500г": 3100
+    }
+  },
+  {
+    "id": "tea-puer-shen",
+    "name": "Пуер Шен (пресований)",
+    "category": "tea",
+    "price": 420,
+    "image": "/images/tea-puer-shen.jpg",
+    "description": "Свіжий пресований пуер з фруктовим і квітковим ароматом. М'якший за Шу, освіжаючий.",
+    "taste_notes": ["Фрукти", "Квіти", "Свіжість"],
+    "origin": "Китай (Юньнань)",
+    "in_stock": true,
+    "bestseller": false,
+    "options": {
+      "weight": ["50г", "100г", "150г", "200г", "250г", "500г"]
+    },
+    "weight_prices": {
+      "50г": 420,
+      "100г": 800,
+      "150г": 1160,
+      "200г": 1500,
+      "250г": 1820,
+      "500г": 3500
+    }
+  },
+  {
+    "id": "tea-puer-jasmine",
+    "name": "Пуер з жасмином",
+    "category": "tea",
+    "price": 460,
+    "image": "/images/tea-puer-jasmine.jpg",
+    "description": "Пресований пуер ароматизований квітами жасмину. Землиста база + квіткова верхня нота.",
+    "taste_notes": ["Жасмин", "Земля", "Троянда"],
+    "origin": "Китай (Юньнань)",
+    "in_stock": true,
+    "bestseller": false,
+    "options": {
+      "weight": ["50г", "100г", "150г", "200г", "250г", "500г"]
+    },
+    "weight_prices": {
+      "50г": 460,
+      "100г": 880,
+      "150г": 1280,
+      "200г": 1660,
+      "250г": 2020,
+      "500г": 3900
     }
   }
 ]

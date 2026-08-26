@@ -5,12 +5,13 @@ export function Footer() {
     <footer className="border-t border-[#E5E5E5] bg-white mt-16">
       <div className="container mx-auto px-4 py-12 grid gap-8 md:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2.5 mb-3">
-            <div className="w-10 h-10 rounded-lg bg-[#FACC15] flex items-center justify-center text-black font-bold text-lg">
-              SB
-            </div>
-            <span className="text-xl font-semibold text-[#0A0A0A]">smart bar</span>
-          </div>
+          <Link href="/" className="inline-block mb-3">
+            <img
+              src="/images/logo.svg"
+              alt="Smart Bar"
+              className="h-10 w-auto"
+            />
+          </Link>
           <p className="text-sm text-[#737373] leading-relaxed">
             Кава та чай з доставкою по Україні.
           </p>
