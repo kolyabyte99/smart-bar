@@ -77,7 +77,7 @@ export default function HomePage() {
       >
         <div className="absolute inset-0 bg-black/65" />
         <div className="relative container mx-auto px-4 py-16 md:py-24 text-center max-w-3xl">
-          <h1 className="text-5xl md:text-7xl font-iceland font-bold mb-5 leading-tight text-white tracking-wide">
+          <h1 className="text-5xl md:text-7xl font-bold mb-5 leading-tight text-white tracking-wide">
             Кава та <span className="text-[#FACC15]">чай</span>
             <br />
             з доставкою по Україні
@@ -95,14 +95,14 @@ export default function HomePage() {
       </section>
 
       {/* ABOUT — білий фон */}
-      <section className="bg-white border-y border-[#E5E5E5]">
+      <section id="about" className="bg-white border-y border-[#E5E5E5] scroll-mt-20">
         <div className="container mx-auto px-4 py-14 max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-iceland font-bold mb-6 text-[#0A0A0A] text-center tracking-wide">
-            Про Smart Bar
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0A0A0A] text-center tracking-wide">
+            Про нас
           </h2>
           <div className="space-y-4 text-[#0A0A0A] leading-relaxed text-center md:text-left">
             <p>
-              <strong className="text-[#0A0A0A] border-b-2 border-[#FACC15]">Smart Bar</strong> —
+              <strong className="font-iceland font-bold text-lg text-[#0A0A0A] border-b-2 border-[#FACC15]">Smart Bar</strong> —
               це кав&apos;ярня для тих, хто цінує якісну каву та чай.
             </p>
             <p>
@@ -127,7 +127,7 @@ export default function HomePage() {
       >
         <div className="container mx-auto px-4 py-14">
           <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-iceland font-bold mb-2 text-[#0A0A0A] tracking-wide">
+            <h2 className="text-4xl md:text-5xl font-bold mb-2 text-[#0A0A0A] tracking-wide">
               Наш асортимент
             </h2>
             <p className="text-[#737373]">Кава, чай та пуер — на будь-який смак</p>
@@ -215,7 +215,7 @@ export default function HomePage() {
       </section>
 
       {/* BENEFITS — білий фон */}
-      <section className="bg-white border-y border-[#E5E5E5]">
+      <section id="delivery-info" className="bg-white border-y border-[#E5E5E5] scroll-mt-20">
         <div className="container mx-auto px-4 py-14 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { icon: "🚚", t: "Доставка НП", d: "По всій Україні за 1–3 дні" },
@@ -233,7 +233,7 @@ export default function HomePage() {
       </section>
 
       {/* DELIVERY — білий фон */}
-      <section className="bg-white border-t border-[#E5E5E5]">
+      <section id="delivery" className="bg-white border-t border-[#E5E5E5] scroll-mt-20">
         <div className="container mx-auto px-4 py-14 max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#0A0A0A] text-center">
             Доставка та оплата

@@ -9,20 +9,23 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-[#FAFAFA]/95 backdrop-blur border-b border-[#E5E5E5]">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
+        <Link href="/" className="flex items-center gap-3 shrink-0 group">
           <img
-            src="/images/logo.svg"
+            src="/images/logo.png"
             alt="Smart Bar"
-            className="h-10 w-auto"
+            className="h-12 w-12"
           />
+          <span className="text-3xl font-iceland tracking-tight text-[#0A0A0A] leading-none">
+            smart bar
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-7 text-sm font-medium">
           <Link href="/" className="text-[#0A0A0A] hover:text-[#FACC15] transition">Головна</Link>
           <Link href="/#catalog" className="text-[#0A0A0A] hover:text-[#FACC15] transition">Магазин</Link>
-          <Link href="/about" className="text-[#0A0A0A] hover:text-[#FACC15] transition">Про нас</Link>
-          <Link href="/delivery" className="text-[#0A0A0A] hover:text-[#FACC15] transition">Доставка</Link>
-          <Link href="/contacts" className="text-[#0A0A0A] hover:text-[#FACC15] transition">Контакти</Link>
+          <Link href="/#about" className="text-[#0A0A0A] hover:text-[#FACC15] transition">Про нас</Link>
+          <Link href="/#delivery" className="text-[#0A0A0A] hover:text-[#FACC15] transition">Доставка</Link>
+          <Link href="/#contacts" className="text-[#0A0A0A] hover:text-[#FACC15] transition">Контакти</Link>
         </nav>
 
         <Link

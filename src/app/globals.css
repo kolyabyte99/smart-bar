@@ -2,13 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@font-face {
+  font-family: "Iceland";
+  src: url("/fonts/Iceland-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 html, body {
   background-color: #FAFAFA;
   color: #0A0A0A;
-  font-family: "Iceland", "Inter", system-ui, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 

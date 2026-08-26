@@ -18,7 +18,7 @@ const config: Config = {
         border: "#E5E5E5",      // сірий border
       },
       fontFamily: {
-        sans: ["Iceland", "Inter", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
         iceland: ["Iceland", "Inter", "sans-serif"],
       },
     },

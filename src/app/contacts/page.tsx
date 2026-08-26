@@ -1,7 +1,7 @@
 export default function ContactsPage() {
   return (
     <div className="container mx-auto px-4 py-10 max-w-2xl">
-      <h1 className="text-4xl md:text-5xl font-iceland font-bold mb-6 text-[#0A0A0A] tracking-wide">
+      <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#0A0A0A] tracking-wide">
         Контакти
       </h1>
 

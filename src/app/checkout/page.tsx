@@ -74,7 +74,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="container mx-auto px-4 py-10">
-      <h1 className="text-4xl md:text-5xl font-iceland font-bold mb-8 text-[#0A0A0A] tracking-wide">
+      <h1 className="text-4xl md:text-5xl font-bold mb-8 text-[#0A0A0A] tracking-wide">
         Оформлення замовлення
       </h1>
 

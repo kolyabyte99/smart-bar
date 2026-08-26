@@ -2,15 +2,18 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#E5E5E5] bg-white mt-16">
+    <footer id="contacts" className="border-t border-[#E5E5E5] bg-white mt-16 scroll-mt-20">
       <div className="container mx-auto px-4 py-12 grid gap-8 md:grid-cols-4">
         <div>
-          <Link href="/" className="inline-block mb-3">
+          <Link href="/" className="inline-flex items-center gap-3 mb-3">
             <img
-              src="/images/logo.svg"
+              src="/images/logo.png"
               alt="Smart Bar"
-              className="h-10 w-auto"
+              className="h-12 w-12"
             />
+            <span className="text-3xl font-medium text-[#0A0A0A] leading-none">
+              smart bar
+            </span>
           </Link>
           <p className="text-sm text-[#737373] leading-relaxed">
             Кава та чай з доставкою по Україні.
@@ -29,9 +32,9 @@ export function Footer() {
         <div>
           <h4 className="font-semibold mb-3 text-[#0A0A0A]">Інформація</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/about" className="text-[#737373] hover:text-[#FACC15] transition">Про нас</Link></li>
-            <li><Link href="/delivery" className="text-[#737373] hover:text-[#FACC15] transition">Доставка та оплата</Link></li>
-            <li><Link href="/contacts" className="text-[#737373] hover:text-[#FACC15] transition">Контакти</Link></li>
+            <li><Link href="/#about" className="text-[#737373] hover:text-[#FACC15] transition">Про нас</Link></li>
+            <li><Link href="/#delivery" className="text-[#737373] hover:text-[#FACC15] transition">Доставка та оплата</Link></li>
+            <li><Link href="/#contacts" className="text-[#737373] hover:text-[#FACC15] transition">Контакти</Link></li>
           </ul>
         </div>
 
